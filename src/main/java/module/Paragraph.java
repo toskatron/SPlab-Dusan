@@ -1,22 +1,32 @@
 package module;
 
+import strategy.AlignStrategy;
+
 public class Paragraph implements Element {
     private String text;
+    private AlignStrategy alignmentStrategy;
 
     public Paragraph(String text) {
         this.text = text;
+        // Default alignment strategy could be set here if needed
     }
 
-    // The other methods remain the same...
+    // Method to set a new alignment strategy
+    public void setAlignStrategy(AlignStrategy alignmentStrategy) {
+        this.alignmentStrategy = alignmentStrategy;
+    }
 
     @Override
     public void print() {
-        System.out.println("Paragraph: " + text);
+        if (alignmentStrategy == null) {
+            System.out.println(text);
+        } else {
+            alignmentStrategy.render(text);
+        }
     }
 
     @Override
     public Element clone() throws CloneNotSupportedException {
-        // Directly use the default object clone.
-        return (Element) super.clone();
+        return null;
     }
 }

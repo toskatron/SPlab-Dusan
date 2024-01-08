@@ -2,29 +2,23 @@ package proxy;
 
 import module.Element;
 import module.Image;
+import strategy.ImageLoader;
 
-public class ImageProxy implements Element {
-    private String imageName;
+public class ImageProxy {
     private Image realImage;
+    private String url;
+    private ImageLoader imageLoader;
 
-    public ImageProxy(String imageName) {
-        this.imageName = imageName;
+    public ImageProxy(String url, ImageLoader imageLoader) {
+        this.url = url;
+        this.imageLoader = imageLoader;
     }
 
-    @Override
-    public void print() {
+    public void displayImage() {
         if (realImage == null) {
-            realImage = new Image(imageName);
+            realImage = new Image(imageLoader);
+            realImage.load();
         }
-        realImage.print();
-    }
-
-    @Override
-    public Element clone() throws CloneNotSupportedException {
-        ImageProxy clone = (ImageProxy) super.clone();
-        if (this.realImage != null) {
-            clone.realImage = (Image) this.realImage.clone();
-        }
-        return clone;
+        realImage.display();
     }
 }
