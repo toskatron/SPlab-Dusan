@@ -3,36 +3,44 @@ package module;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book implements Element {
     private String title;
-    private List<Chapter> chapters = new ArrayList<>();
-    private Author author;
+    private List<Author> authors = new ArrayList<>();
+    private List<Element> content = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
     }
 
     public void addAuthor(Author author) {
-        this.author = author;
+        this.authors.add(author);
     }
 
-    public int createChapter(String chapterName) {
-        Chapter newChapter = new Chapter(chapterName);
-        chapters.add(newChapter);
-        return chapters.indexOf(newChapter);
+    public void add(Element element) {
+        content.add(element);
     }
 
-    public Chapter getChapter(int index) {
-        return chapters.get(index);
+    public void remove(Element element) {
+        content.remove(element);
+    }
+
+    public Element get(int index) {
+        return content.get(index);
     }
 
     public void print() {
         System.out.println("Book: " + title);
-        if (author != null) {
+        System.out.println("Authors:");
+        for (Author author : authors) {
             author.print();
         }
-        for (Chapter chapter : chapters) {
-            chapter.print();
+        for (Element element : content) {
+            element.print();
         }
+    }
+
+    @Override
+    public Element clone() throws CloneNotSupportedException {
+        return null;
     }
 }
