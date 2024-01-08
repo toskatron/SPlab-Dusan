@@ -1,23 +1,26 @@
 package module;
 
+import java.util.concurrent.TimeUnit;
+
 public class Image implements Element {
     private String url;
 
     public Image(String url) {
         this.url = url;
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    // The `Image` doesn't have children, so these methods can be empty
-    public void add(Element element) {}
-    public void remove(Element element) {}
-    public Element get(int index) { return null; }
-
+    @Override
     public void print() {
         System.out.println("Image with name:" + url);
     }
 
     @Override
     public Element clone() throws CloneNotSupportedException {
-        return null;
+        return (Element) super.clone();
     }
 }

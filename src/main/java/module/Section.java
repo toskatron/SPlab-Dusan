@@ -20,8 +20,6 @@ public class Section implements Element {
         }
     }
 
-    // The other methods remain the same...
-
     @Override
     public void print() {
         System.out.println(title);

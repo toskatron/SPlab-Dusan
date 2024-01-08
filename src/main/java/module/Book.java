@@ -16,18 +16,16 @@ public class Book implements Element {
         this.authors.add(author);
     }
 
-    public void add(Element element) {
-        content.add(element);
+    public void addContent(Element element) {
+        try {
+            Element clone = element.clone(); // Clone the element
+            content.add(clone); // Add the clone to the content list
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void remove(Element element) {
-        content.remove(element);
-    }
-
-    public Element get(int index) {
-        return content.get(index);
-    }
-
+    @Override
     public void print() {
         System.out.println("Book: " + title);
         System.out.println("Authors:");
@@ -41,6 +39,11 @@ public class Book implements Element {
 
     @Override
     public Element clone() throws CloneNotSupportedException {
-        return null;
+        Book cloned = (Book) super.clone();
+        cloned.content = new ArrayList<>(); // Create a new list for the clone
+        for (Element element : this.content) {
+            cloned.addContent(element.clone()); // Clone and add all elements
+        }
+        return cloned;
     }
 }
