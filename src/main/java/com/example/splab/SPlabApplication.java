@@ -52,7 +52,6 @@ public class SPlabApplication {
     // One can also request an instance from DI context by name
             c = (ClientComponent)context.getBean("clientComponent");
             c.operation();
-
     }
 
 }

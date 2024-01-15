@@ -1,6 +1,8 @@
 package module;
 
 
+import strategy.ImageLoader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class SubChapter {
         content.add(new Paragraph(text));
     }
 
-    public void createNewImage(String imageName) {
+    public void createNewImage(ImageLoader imageName) {
         content.add(new Image(imageName));
     }
 

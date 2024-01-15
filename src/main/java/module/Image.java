@@ -1,26 +1,21 @@
 package module;
 
+import strategy.ImageLoader;
+
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element {
-    private String url;
+public class Image {
+    private ImageLoader imageLoader;
 
-    public Image(String url) {
-        this.url = url;
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public Image(ImageLoader imageLoader) {
+        this.imageLoader = imageLoader;
     }
 
-    @Override
-    public void print() {
-        System.out.println("Image with name:" + url);
+    public void load() {
+        imageLoader.loadImage();
     }
 
-    @Override
-    public Element clone() throws CloneNotSupportedException {
-        return (Element) super.clone();
+    public void display() {
+        imageLoader.displayImage();
     }
 }

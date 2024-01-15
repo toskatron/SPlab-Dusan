@@ -12,29 +12,26 @@ public class Section implements Element {
     }
 
     public void add(Element element) {
-        try {
-            Element clone = element.clone(); // Clone the element
-            content.add(clone); // Add the clone to the content list
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+        if (element != null) {
+            content.add(element);
+        } else {
+            // Optionally throw an exception or log a warning
+            throw new IllegalArgumentException("Cannot add null element to section");
         }
     }
 
     @Override
     public void print() {
         System.out.println(title);
-        for (Element element : content) {
-            element.print();
+        for (Element elem : content) {
+            if (elem != null) { // Additional null check before printing
+                elem.print();
+            }
         }
     }
 
     @Override
     public Element clone() throws CloneNotSupportedException {
-        Section cloned = (Section) super.clone();
-        cloned.content = new ArrayList<>(); // Create a new list for the clone
-        for (Element element : this.content) {
-            cloned.add(element.clone()); // Clone and add all elements
-        }
-        return cloned;
+        return null;
     }
 }
