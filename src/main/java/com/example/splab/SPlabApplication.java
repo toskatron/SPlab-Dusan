@@ -3,11 +3,8 @@ package com.example.splab;
 import com.example.splab.difexample.ClientComponent;
 import com.example.splab.difexample.SingletonComponent;
 import com.example.splab.difexample.TransientComponent;
-import module.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import proxy.ImageProxy;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 

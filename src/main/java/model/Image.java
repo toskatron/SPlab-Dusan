@@ -1,8 +1,6 @@
-package module;
+package model;
 
-import strategy.ImageLoader;
-
-import java.util.concurrent.TimeUnit;
+import services.ImageLoader;
 
 public class Image {
     private ImageLoader imageLoader;

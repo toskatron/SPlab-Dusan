@@ -1,4 +1,4 @@
-package strategy;
+package services;
 
 public class JPGImage implements ImageLoader {
     private String url;

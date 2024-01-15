@@ -1,8 +1,6 @@
-package proxy;
+package services;
 
-import module.Element;
-import module.Image;
-import strategy.ImageLoader;
+import model.Image;
 
 public class ImageProxy {
     private Image realImage;

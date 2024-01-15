@@ -1,4 +1,4 @@
-package module;
+package model;
 
 class Table implements Element {
     // Assuming 'something' is a title or similar attribute
