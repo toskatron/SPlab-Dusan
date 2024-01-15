@@ -1,7 +1,7 @@
-package module;
+package model;
 
 
-import strategy.ImageLoader;
+import services.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;

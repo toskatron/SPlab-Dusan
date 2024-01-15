@@ -1,4 +1,6 @@
-package module;
+package model;
+
+import com.example.splab.interfaces.BookElementVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,10 @@ public class Book implements Element {
             e.printStackTrace();
         }
     }
+    public void accept(BookElementVisitor visitor) {
+        visitor.visit(this);
+    }
+
 
     @Override
     public void print() {
@@ -45,5 +51,29 @@ public class Book implements Element {
             cloned.addContent(element.clone()); // Clone and add all elements
         }
         return cloned;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+    public List<Element> getContent() {
+        return content;
+    }
+
+    public void setContent(List<Element> content) {
+        this.content = content;
     }
 }

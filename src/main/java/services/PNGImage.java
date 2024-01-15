@@ -1,4 +1,4 @@
-package strategy;
+package services;
 
 public class PNGImage implements ImageLoader {
     private String url;

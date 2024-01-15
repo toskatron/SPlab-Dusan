@@ -1,4 +1,4 @@
-package module;
+package model;
 
 public interface Element extends Cloneable {
     void print();

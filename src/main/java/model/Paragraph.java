@@ -1,6 +1,6 @@
-package module;
+package model;
 
-import strategy.AlignStrategy;
+import services.AlignStrategy;
 
 public class Paragraph implements Element {
     private String text;
