@@ -1,6 +1,6 @@
 package model;
 
-import services.AlignStrategy;
+import com.example.splab.interfaces.AlignStrategy;
 
 public class Paragraph implements Element {
     private String text;

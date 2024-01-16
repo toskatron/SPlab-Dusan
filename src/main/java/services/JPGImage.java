@@ -1,5 +1,7 @@
 package services;
 
+import com.example.splab.interfaces.ImageLoader;
+
 public class JPGImage implements ImageLoader {
     private String url;
 

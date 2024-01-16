@@ -1,7 +1,7 @@
 package model;
 
 
-import services.ImageLoader;
+import com.example.splab.interfaces.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
