@@ -1,5 +1,6 @@
 package services;
 
+import com.example.splab.interfaces.ImageLoader;
 import model.Image;
 
 public class ImageProxy {

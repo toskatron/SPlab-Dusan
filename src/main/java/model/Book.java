@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book implements Element {
+    private Long id;
     private String title;
     private List<Author> authors = new ArrayList<>();
     private List<Element> content = new ArrayList<>();
@@ -30,7 +31,7 @@ public class Book implements Element {
         visitor.visit(this);
     }
 
-
+    
     @Override
     public void print() {
         System.out.println("Book: " + title);
@@ -42,7 +43,7 @@ public class Book implements Element {
             element.print();
         }
     }
-
+    
     @Override
     public Element clone() throws CloneNotSupportedException {
         Book cloned = (Book) super.clone();
@@ -55,6 +56,14 @@ public class Book implements Element {
 
     public String getTitle() {
         return title;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setTitle(String title) {

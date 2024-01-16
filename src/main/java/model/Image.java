@@ -1,6 +1,6 @@
 package model;
 
-import services.ImageLoader;
+import com.example.splab.interfaces.ImageLoader;
 
 public class Image {
     private ImageLoader imageLoader;

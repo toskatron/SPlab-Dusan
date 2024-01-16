@@ -1,5 +1,7 @@
 package services;
 
+import com.example.splab.interfaces.ImageLoader;
+
 public class PNGImage implements ImageLoader {
     private String url;
 
